@@ -7,6 +7,7 @@ Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
 Source0: http://xorg.freedesktop.org/releases/individual/lib/libXau-%{version}.tar.bz2
+Patch0: libxau-visibility.patch
 BuildRoot: %{_tmppath}/%{name}-root
 
 BuildRequires: x11-proto-devel >= 1.0.0
@@ -72,6 +73,8 @@ Static development files for %{name}
 
 %prep
 %setup -q -n libXau-%{version}
+
+%patch0 -p1 -b .visibility
 
 %build
 %configure2_5x	--x-includes=%{_includedir}\
