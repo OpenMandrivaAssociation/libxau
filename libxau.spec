@@ -1,8 +1,8 @@
 %define libxau %mklibname xau 6
 Name: libxau
 Summary: X authorization file management library
-Version: 1.0.5
-Release: %mkrel 2
+Version: 1.0.6
+Release: %mkrel 1
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
