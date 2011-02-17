@@ -1,8 +1,11 @@
 %define libxau %mklibname xau 6
+%define develname %mklibname xau -d
+%define staticname %mklibname xau -s -d
+
 Name: libxau
 Summary: X authorization file management library
 Version: 1.0.6
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -29,23 +32,25 @@ X authorization file management library
 
 #-----------------------------------------------------------
 
-%package -n %{libxau}-devel
+%package -n %{develname}
 Summary: Development files for %{name}
 Group: Development/X11
 Requires: %{libxau} = %{version}
 Requires: x11-proto-devel >= 1.0.0
+Provides: libxau6-devel = %{version}-%{release}
 Provides: libxau-devel = %{version}-%{release}
+Obsoletes: libxau6-devel 
 Conflicts: libxorg-x11-devel < 7.0
 
-%description -n %{libxau}-devel
+%description -n %{develname}
 Development files for %{name}
 
-%pre -n %{libxau}-devel
+%pre -n %{develname}
 if [ -h %{_includedir}/X11 ]; then
 	rm -f %{_includedir}/X11
 fi
 
-%files -n %{libxau}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/pkgconfig/xau.pc
 %{_includedir}/X11/Xauth.h
@@ -55,17 +60,19 @@ fi
 
 #-----------------------------------------------------------
 
-%package -n %{libxau}-static-devel
+%package -n %{staticname}
 Summary: Static development files for %{name}
 Group: Development/X11
-Requires: %{libxau}-devel >= %{version}
+Requires: %{develname} >= %{version}
+Provides: libxau6-static-devel = %{version}-%{release}
 Provides: libxau-static-devel = %{version}-%{release}
+Obsoletes: libxau6-static-devel
 Conflicts: libxorg-x11-static-devel < 7.0
 
-%description -n %{libxau}-static-devel
+%description -n %{staticname}
 Static development files for %{name}
 
-%files -n %{libxau}-static-devel
+%files -n %{staticname}
 %defattr(-,root,root)
 %{_libdir}/libXau.a
 
