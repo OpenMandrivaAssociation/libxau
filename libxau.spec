@@ -5,7 +5,7 @@
 Name: libxau
 Summary: X authorization file management library
 Version: 1.0.6
-Release: %mkrel 2
+Release: %mkrel 3
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -39,7 +39,7 @@ Requires: %{libxau} = %{version}
 Requires: x11-proto-devel >= 1.0.0
 Provides: libxau6-devel = %{version}-%{release}
 Provides: libxau-devel = %{version}-%{release}
-Obsoletes: libxau6-devel 
+Obsoletes: %{_lib}xau6-devel < %{version}-%{release}
 Conflicts: libxorg-x11-devel < 7.0
 
 %description -n %{develname}
@@ -66,7 +66,7 @@ Group: Development/X11
 Requires: %{develname} >= %{version}
 Provides: libxau6-static-devel = %{version}-%{release}
 Provides: libxau-static-devel = %{version}-%{release}
-Obsoletes: libxau6-static-devel
+Obsoletes: %{_lib}xau6-static-devel < %{version}-%{release}
 Conflicts: libxorg-x11-static-devel < 7.0
 
 %description -n %{staticname}
