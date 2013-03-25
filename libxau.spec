@@ -11,6 +11,7 @@ License:	MIT
 URL:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXau-%{version}.tar.bz2
 Patch0:		libxau-visibility.patch
+Patch1:		aarch64.patch
 
 BuildRequires:	x11-proto-devel >= 1.0.0
 BuildRequires:	x11-util-macros >= 1.0.1
@@ -42,6 +43,7 @@ Development files for %{name}
 %prep
 %setup -qn libXau-%{version}
 %patch0 -p1 -b .visibility
+%patch1 -p1 
 
 %build
 %configure2_5x \
