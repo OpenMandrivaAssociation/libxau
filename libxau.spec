@@ -5,7 +5,7 @@
 Summary:	X authorization file management library
 Name:		libxau
 Version:	1.0.8
-Release:	10
+Release:	11
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
