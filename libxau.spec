@@ -4,8 +4,8 @@
 
 Summary:	X authorization file management library
 Name:		libxau
-Version:	1.0.8
-Release:	13
+Version:	1.0.9
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -36,19 +36,18 @@ Provides:	%{name}-devel = %{version}-%{release}
 Development files for %{name}.
 
 %prep
-%setup -qn libXau-%{version}
-%patch0 -p1 -b .visibility
+%autosetup -n libXau-%{version} -p1
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static \
 	--x-includes=%{_includedir} \
 	--x-libraries=%{_libdir}
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libxau}
 %{_libdir}/libXau.so.%{major}*
