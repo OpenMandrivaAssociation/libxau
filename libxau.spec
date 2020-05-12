@@ -9,13 +9,13 @@
 %endif
 %if %{with compat32}
 %define lib32xau libxau%{major}
-%define dev32xau libxau-devel
+%define dev32name libxau-devel
 %endif
 
 Summary:	X authorization file management library
 Name:		libxau
 Version:	1.0.9
-Release:	3
+Release:	4
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
