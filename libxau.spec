@@ -22,6 +22,9 @@ Url:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXau-%{version}.tar.xz
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xproto)
+%if %{with compat32}
+BuildRequires:	libc6
+%endif
 
 %description
 X authorization file management library.
