@@ -20,8 +20,6 @@ Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXau-%{version}.tar.xz
-Patch0:		libxau-visibility.patch
-
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xproto)
 
@@ -48,6 +46,7 @@ Development files for %{name}.
 %package -n %{lib32xau}
 Summary:	X authorization file management library (32-bit)
 Group:		Development/X11
+BuildRequires:	libc6
 
 %description -n %{lib32xau}
 X authorization file management library.
