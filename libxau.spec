@@ -18,7 +18,7 @@ Version:	1.0.11
 Release:	2
 Group:		Development/X11
 License:	MIT
-Url:		http://xorg.freedesktop.org
+Url:		https://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXau-%{version}.tar.xz
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xproto)
