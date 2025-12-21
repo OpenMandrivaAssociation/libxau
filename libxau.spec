@@ -20,6 +20,11 @@ Group:		Development/X11
 License:	MIT
 Url:		https://xorg.freedesktop.org
 Source0:	https://xorg.freedesktop.org/releases/individual/lib/libXau-%{version}.tar.xz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xproto)
 %if %{with compat32}
